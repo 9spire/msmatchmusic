@@ -415,12 +415,12 @@ ul.shortcode-list span {
 .big-social i {
   box-sizing: content-box;
   margin-bottom: 30px;
-  font-size: 2.5714285714rem;
-  width: 2.5714285714rem;
-  height: 2.5714285714rem;
+  font-size: 2rem;
+  width: 2.2rem;
+  height: 2.1rem;
   color: #fff;
   display: inline-block;
-  padding: 15px;
+  padding: 20px;
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
   border-bottom-left-radius: 50%;
@@ -436,7 +436,7 @@ ul.shortcode-list span {
 }
 .big-social i:hover {
   border: 3px solid #edb713;
-  background-color: rgba(237, 183, 19, 0);
+  background-color: rgba(237, 183, 19, 0.8);
 }
 
 .big-social h4 {
@@ -1067,6 +1067,20 @@ ul.info i:hover {
   font-size: 2.5rem;
   width: 30px;
   text-align: center;
+}
+
+/* shows */
+
+.shows ul {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.shows ul li {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
 }
 
 /* clients */
@@ -2951,6 +2965,11 @@ body {
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
 }
+
+.modClients .clients ul {
+  list-style: none;
+}
+
 .modClients a img {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
@@ -4265,7 +4284,8 @@ body {
 }
 .modMasonryGallery ul.gallery li {
   display: block;
-  width: 25%;
+  width: 24.5%;
+  margin: 0 2px;
 }
 .modMasonryGallery ul.gallery li.wide {
   width: 50%;
