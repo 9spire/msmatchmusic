@@ -1,21 +1,15 @@
-- name: Home
+- name: Top
   path: "#top"
   section_id: home
-- name: About
+- name: Bio
   path: "#about"
   section_id: about
-- name: Services
-  path: "#services"
-  section_id: services
-- name: Works
+- name: Mixes
   path: "#works"
   section_id: works
-- name: Team
-  path: "#team"
-  section_id: team
-- name: Blog
-  path: /blog/
-  section_id: blog  
+- name: New Section
+  path: "#newsection"
+  section_id: newsection
 - name: Contact
   path: "#contact"
   section_id: contact
