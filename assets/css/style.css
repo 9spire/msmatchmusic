@@ -5724,7 +5724,7 @@ body {
   }
 
   .modMasonryGallery ul.gallery li {
-    width: 50%;
+    width: 100%;
   }
   .modMasonryGallery ul.gallery li.wide {
     width: 100%;
@@ -5751,12 +5751,12 @@ body {
   }
 
   .modMasonryGallery.alt ul.gallery li {
-    width: 46%;
+    width: 98%;
     margin: 2%;
   }
 
   .modMasonryGallery.alt.no-gutter ul.gallery li {
-    width: 50%;
+    width: 100%;
     margin: 0;
   }
 

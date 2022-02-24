@@ -1,4 +1,4 @@
-- name: Top
+- name: ↑ Top
   path: "#top"
   section_id: home
 - name: Bio
@@ -7,9 +7,9 @@
 - name: Mixes
   path: "#works"
   section_id: works
-- name: New Section
-  path: "#newsection"
-  section_id: newsection
+- name: Festivals & Shows
+  path: "#shows"
+  section_id: shows
 - name: Contact
   path: "#contact"
   section_id: contact

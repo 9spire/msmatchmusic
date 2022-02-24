@@ -19,18 +19,16 @@ team_slides:
   - /assets/images/@stock/slide-full-10.jpg
 
 testimonials:
-  - quote: "Reprehenderit eos et non et ut eum reprehenderit quis sequi quia vel repellendus id. Velit quit blanditiis dolor quam error eos dolores sequi eaque rerum est. Velit quit blanditiis dolor quam error eos dolores sequi eaque rerum est."
+  - quote: "Silent Disco under the I-5 Overpass - 7pm - 10pm. Rent headphones and get more information."
+    link: "https://www.facebook.com/events/5040486185994707"
     author: 
-      name: "David White"
-      position: 'Designer at Huglab'
-  - quote: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat consectetuer sit amet magna adipiscing."
+      name: "Fun Luv'n Silent Disco"
+      position: 'Eastbank esplanade underneath 1-5 overpass'
+  - quote: "Shift Festival - July 14 - July 17, 2022. native habitat theme camp."
+    link: "https://www.facebook.com/events/358417986127047"
     author: 
-      name: "David White"
-      position: 'Designer at Huglab'
-  - quote: "Reprehenderit eos et non et ut eum reprehenderit quis sequi quia vel repellendus id. Velit quit blanditiis dolor quam error eos dolores sequi eaque rerum est."
-    author: 
-      name: "David White"
-      position: 'Designer at Huglab'
+      name: "Tectonic SHIFT Festival 2022: Rainbow Ranch"
+      position: 'Sherman County, Oregon'
 
 festivals:
   - Re:Set 2021
@@ -99,8 +97,7 @@ opens:
       <div class="section-title">
         <p class="small-title">Biography</p>
         <h2>
-          Moving bodies & minds  <br/> 
-          is what she does best.
+          Moving bodies & minds is what she does best.
         </h2>
         <p class="big-size">Ms Match brings an obsession-level focus to selecting, combining, and creating the music that keeps her and the crowd moving. Behind the decks, Ms Match channels the universal joy of losing oneself on the dance floor, in that place beyond conscious thought.
         </p>
@@ -224,13 +221,13 @@ opens:
 </div>
 -->
 
-
+<a id='shows'></a>
 <div class='full no-overflow no-padding parallax' style="background-image: url({{ "/assets/images/@stock/MsMatch-ReSet2021-7.jpg" | relative_url }})">
   <div class="left-half">
     <div class="two spacing"></div>
     <div class="row">
       <div class="section-header alt white">
-        <h2>New Section</h2>
+        <h2>Upcoming Shows</h2>
       </div>
       <div class='mod modTestimonials simple'>
         <div class='row'>
@@ -238,7 +235,7 @@ opens:
             <div class='items'>
               {% for t in page.testimonials %}
                 <div class='item'>
-                  <p class='quote'>{{ t.quote }}</p>
+                  <p class='quote'><a href='{{ t.link }}' target="_blank">{{ t.quote }}</a></p>
                   <div class="two spacing"></div>
                   <div class='author'>
                     <p class='author-name'>
