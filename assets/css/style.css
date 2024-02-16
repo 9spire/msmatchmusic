@@ -226,6 +226,10 @@ hr {
   padding-bottom: 0;
 }
 
+.padding-bottom {
+  padding-bottom: 80px;
+}
+
 .parallax {
   background-attachment: fixed;
 }
@@ -2711,6 +2715,22 @@ body {
 
 .modBlogPost.big.no_bg .content {
   padding-top: 0;
+}
+
+.youtube {
+  text-align: center;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.youtube-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .modBlogPost .content {

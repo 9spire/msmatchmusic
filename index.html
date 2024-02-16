@@ -19,6 +19,11 @@ team_slides:
   - /assets/images/@stock/slide-full-10.jpg
 
 testimonials:
+  - quote: "White Out 2024"
+    link: "https://www.facebook.com/events/711002364323466"
+    author: 
+      name: "Bright Whites and Black Lights"
+      position: 'March 2, 2024'
   - quote: "Winter Light Festival Silent Disco 2024"
     link: "https://www.facebook.com/events/879482609841836"
     author: 
@@ -29,11 +34,6 @@ testimonials:
     author: 
       name: "Winter Light Festival"
       position: 'February 9, 2024 8-10pm'
-  - quote: "White Out 2024"
-    link: "https://www.facebook.com/events/711002364323466"
-    author: 
-      name: "Bright Whites and Black Lights"
-      position: 'March 2, 2024'
 
 festivals:
   - Shift 2022
@@ -112,7 +112,7 @@ opens:
         <p class="big-size">Ms Match brings an obsession-level focus to selecting, combining, and creating the music that keeps her and the crowd moving. Behind the decks, Ms Match channels the universal joy of losing oneself on the dance floor, in that place beyond conscious thought.
         </p>
         <div class="four spacing"></div>
-        <img style="max-width: 70px;" src="{{ "/assets/images/MsMatchLogo-thick.png" | relative_url }}" alt="">
+        <img style="max-width: 70px;" src="{{ "/assets/images/InitialLogo-Yellow64.png" | relative_url }}" alt="">
       </div>
     </div>
     <div class="four spacing"></div>
@@ -222,33 +222,33 @@ opens:
   </div>
 </div>
 
-<!--
+
 <a id='blog'></a>
-<div class='full grey'>
+<div class='full dark'>
   <div class='row'>
     <div class='large-8 columns large-centered'>
-      {% include section-title.html small_title="latest posts" title="Wrap ideas." %}
+      {% include section-title.html small_title="watch" title="Videos" %}
     </div>
   </div>
 </div>
-<div class="full grey no-padding no-overflow">
-  {% for post in site.posts limit:3 %}
+<div class="full dark no-padding no-overflow padding-bottom">
     <div class='large-4 columns'>
-      <div class='mod modBlogPost simple'>
-        <div class='content'>
-          <p class='date'>{{ post.date | date: "%B %d, %Y" }}</p>
-          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          <div class='spacing'></div>
-          <p>
-            <a class='button boxed yellow tiny' href='{{ post.url | relative_url }}'>Read more</a>
-          </p>
-        </div>
+      <div class='youtube'>
+        <iframe class="youtube-iframe" src="https://www.youtube.com/embed/PMtmbWYkwY8?si=9jA8eP1vhngu0R7T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
-      <div class="four spacing"></div>
     </div>
-  {% endfor %}
+    <div class='large-4 columns'>
+      <div class='youtube'>
+        <iframe class="youtube-iframe" src="https://www.youtube.com/embed/LXeEssCTDYY?si=O20GxQ7vS8DU8AUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class='large-4 columns'>
+      <div class='youtube'>
+        <iframe class="youtube-iframe" src="https://www.youtube.com/embed/pC--EKh1SW8?si=oY_84rSGWtwN4or1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="four spacing"></div>
 </div>
--->
 
 <a id='shows'></a>
 <div class='full no-overflow no-padding parallax' style="background-image: url({{ "/assets/images/@stock/MsMatch-ReSet2021-7.jpg" | relative_url }})">
