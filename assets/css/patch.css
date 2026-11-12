@@ -354,91 +354,304 @@ body.posts .modBlogPost {
 
 /* ——— EPK refresh ——— */
 
-/* Sticky nav: readable over white sections */
+/* Sticky nav — compact at every breakpoint; kill theme 100px bar */
 .contain-to-grid.transparent.fixed,
-.contain-to-grid.transparent.white.fixed {
-  background: #f7f7f7 !important;
-  border-bottom: 1px solid #e8e8e8;
+.contain-to-grid.transparent.white.fixed,
+.contain-to-grid.site-header,
+.contain-to-grid,
+.contain-to-grid.transparent {
+  height: auto !important;
+  min-height: 0 !important;
+  background: #fff !important;
+  border-bottom: 1px solid #ececec;
   box-shadow: none;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 200 !important;
 }
 
 .contain-to-grid.transparent.fixed .top-bar,
-.contain-to-grid.transparent.white.fixed .top-bar {
+.contain-to-grid.transparent.white.fixed .top-bar,
+.contain-to-grid .top-bar.onepage.site-nav {
   background: transparent !important;
+  height: auto !important;
+  line-height: normal !important;
+  overflow: visible !important;
 }
 
-.contain-to-grid.transparent.white.fixed
-  .top-bar-section
-  li:not(.has-form)
-  a:not(.button) {
-  color: #222 !important;
+.contain-to-grid .title-area,
+.contain-to-grid .title-area li,
+.contain-to-grid .title-area a,
+.contain-to-grid .top-bar .title-area,
+.contain-to-grid .top-bar .title-area .name,
+.contain-to-grid .top-bar .title-area .name h1,
+.contain-to-grid .top-bar .title-area .name h1 a {
+  height: auto !important;
+  line-height: normal !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  float: none !important;
+  width: auto !important;
+  font-size: inherit !important;
 }
 
-.contain-to-grid.transparent.white.fixed
-  .top-bar-section
-  li:not(.has-form)
-  a:not(.button):hover {
-  color: #edb713 !important;
+.contain-to-grid .title-area img,
+.contain-to-grid .title-area li img,
+.contain-to-grid .title-area a img,
+.site-nav__logo {
+  width: auto !important;
+  max-width: 40px !important;
+  max-height: 40px !important;
+  height: auto !important;
+  display: block;
 }
 
-.contain-to-grid.transparent.white.fixed #menu-toggler a,
-.contain-to-grid.transparent.white.fixed #menu-toggler a i {
-  color: #222 !important;
+.site-nav__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 3rem;
+  padding: 0.4rem 0.9rem;
 }
 
-.contain-to-grid.transparent.white.fixed #menu-toggler a:hover,
-.contain-to-grid.transparent.white.fixed #menu-toggler a:hover i {
-  color: #edb713 !important;
+.site-nav__toggle {
+  display: none;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  line-height: 1;
+  color: #222;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
 }
 
-/* Desktop nav: show links; hamburger on small screens */
-@media only screen and (min-width: 641px) {
-  #menu-toggler {
+.site-nav__toggle i {
+  font-size: 1.2rem;
+  color: inherit;
+}
+
+.contain-to-grid.transparent.white.fixed .site-nav__toggle:hover,
+.contain-to-grid.transparent.white.fixed .site-nav__toggle:focus {
+  color: #edb713;
+}
+
+/* Large: full-width row, logo left, links right */
+@media only screen and (min-width: 901px) {
+  .site-nav__toggle {
     display: none !important;
   }
 
-  .contain-to-grid .top-bar.onepage {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 100%;
-    padding: 0 1.5rem;
+  .contain-to-grid.transparent.fixed,
+  .contain-to-grid.transparent.white.fixed {
+    width: 100% !important;
+    left: 0;
+    right: 0;
   }
 
-  .contain-to-grid .top-bar.onepage .title-area {
-    float: none;
-    margin: 0;
+  .contain-to-grid .top-bar.onepage.site-nav {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box;
+    padding: 0 clamp(1.25rem, 4vw, 3rem);
+    min-height: 3.25rem;
+  }
+
+  .contain-to-grid .top-bar.onepage .site-nav__bar {
+    width: auto;
+    flex: 0 0 auto;
+    min-height: 0;
+    padding: 0.45rem 0;
+  }
+
+  .contain-to-grid .title-area img,
+  .site-nav__logo {
+    max-width: 42px !important;
+    max-height: 42px !important;
   }
 
   .contain-to-grid .top-bar-section,
-  .contain-to-grid .top-bar-section.closed {
+  .contain-to-grid .top-bar-section.closed,
+  .contain-to-grid .top-bar-section.site-nav__panel {
     display: block !important;
     float: none !important;
     width: auto !important;
+    position: static !important;
+    background: transparent !important;
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 0 0 0 auto !important;
+    flex: 0 0 auto;
   }
 
-  .contain-to-grid .top-bar-section ul.right {
-    float: none;
-    display: flex;
-    gap: 0.25rem;
+  .contain-to-grid .top-bar-section ul.right,
+  .contain-to-grid .top-bar-section ul.site-nav__links {
+    float: none !important;
+    display: flex !important;
+    align-items: center;
+    gap: 0.1rem;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
   }
 
-  .contain-to-grid .top-bar-section ul.right > li {
+  .contain-to-grid .top-bar-section ul.right > li,
+  .contain-to-grid .top-bar-section ul.site-nav__links > li {
     display: block;
-    float: none;
+    float: none !important;
+    background: transparent !important;
+  }
+
+  .contain-to-grid.transparent.white.fixed
+    .top-bar-section
+    li:not(.has-form)
+    a:not(.button),
+  .contain-to-grid
+    .top-bar-section
+    li:not(.has-form)
+    a:not(.button) {
+    height: auto !important;
+    line-height: 1.2 !important;
+    padding: 0.55rem 0.7rem !important;
+    background: transparent !important;
+    color: #222 !important;
+    white-space: nowrap;
+  }
+
+  .contain-to-grid.transparent.white.fixed
+    .top-bar-section
+    li:not(.has-form)
+    a:not(.button):hover {
+    color: #edb713 !important;
+    background: transparent !important;
   }
 }
 
-@media only screen and (max-width: 640px) {
-  #menu-toggler {
-    display: block;
-    float: right;
-    margin-right: 15px;
-    margin-top: 18px;
+/* Mid + mobile: compact sticky + hamburger + slim text panel */
+@media only screen and (max-width: 900px) {
+  .contain-to-grid.transparent.fixed,
+  .contain-to-grid.transparent.white.fixed {
+    height: auto !important;
   }
 
-  .contain-to-grid .top-bar-section.closed {
-    display: none;
+  .contain-to-grid .top-bar.onepage.site-nav {
+    display: block !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .site-nav__bar {
+    min-height: 2.5rem;
+    padding: 0.25rem 0.7rem;
+  }
+
+  .contain-to-grid .title-area img,
+  .contain-to-grid .title-area li img,
+  .contain-to-grid .title-area a img,
+  .contain-to-grid .site-nav__logo,
+  .site-nav__logo {
+    width: auto !important;
+    max-width: 30px !important;
+    max-height: 30px !important;
+  }
+
+  .site-nav__toggle {
+    display: inline-flex !important;
+  }
+
+  .contain-to-grid .top-bar-section.site-nav__panel,
+  .contain-to-grid .top-bar-section.site-nav__panel.closed {
+    float: none !important;
+    width: 100% !important;
+    left: 0 !important;
+    position: static !important;
+    background: #fff !important;
+    border-top: 0 !important;
+    margin: 0 !important;
+    padding: 0 0 0.25rem;
+  }
+
+  .contain-to-grid .top-bar-section.site-nav__panel.closed {
+    display: none !important;
+  }
+
+  .contain-to-grid .top-bar-section.site-nav__panel.is-open {
+    display: block !important;
+  }
+
+  .contain-to-grid .top-bar-section.site-nav__panel ul.right,
+  .contain-to-grid .top-bar-section.site-nav__panel ul.site-nav__links {
+    float: none !important;
+    width: 100% !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 0.75rem !important;
+    background: transparent !important;
+  }
+
+  .contain-to-grid .top-bar-section.site-nav__panel ul.right > li,
+  .contain-to-grid .top-bar-section.site-nav__panel ul.site-nav__links > li {
+    float: none !important;
+    display: block !important;
+    width: 100% !important;
+    background: transparent !important;
+    border: 0 !important;
+  }
+
+  .contain-to-grid.transparent.white.fixed
+    .top-bar-section.site-nav__panel
+    li:not(.has-form)
+    a:not(.button),
+  .contain-to-grid
+    .top-bar-section.site-nav__panel
+    li:not(.has-form)
+    a:not(.button) {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    line-height: 1.25 !important;
+    padding: 0.5rem 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-bottom: 1px solid #ececec !important;
+    color: #222 !important;
+    font-size: 0.92rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.03em !important;
+    text-transform: none !important;
+    text-align: left !important;
+  }
+
+  .contain-to-grid
+    .top-bar-section.site-nav__panel
+    li:last-child
+    a:not(.button) {
+    border-bottom: 0 !important;
+  }
+
+  .contain-to-grid.transparent.white.fixed
+    .top-bar-section.site-nav__panel
+    li:not(.has-form)
+    a:not(.button):hover,
+  .contain-to-grid
+    .top-bar-section.site-nav__panel
+    li:not(.has-form)
+    a:not(.button):hover {
+    color: #edb713 !important;
+    background: transparent !important;
   }
 }
 
@@ -509,6 +722,12 @@ body.posts .modBlogPost {
   z-index: 3;
   max-width: 720px;
   padding: 22vh 8% 12vh;
+}
+
+@media only screen and (max-width: 900px) {
+  .hero-slideshow__content {
+    padding: 10vh 6% 8vh;
+  }
 }
 
 .hero-slideshow__content .small-title {
@@ -814,7 +1033,18 @@ body {
   padding-bottom: 0;
 }
 
-/* Hero no longer uses video wrapper top-shift spacing the same way */
+/* Compact sticky nav offset — theme used -100px for a 100px bar */
 #main.top-shift {
+  margin-top: 0;
   padding-top: 0;
+}
+
+body.f-topbar-fixed {
+  padding-top: 3.25rem !important;
+}
+
+@media only screen and (max-width: 900px) {
+  body.f-topbar-fixed {
+    padding-top: 2.75rem !important;
+  }
 }

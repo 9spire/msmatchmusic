@@ -23,3 +23,4 @@ js:
   - /assets/javascripts/boot.js
   - /assets/javascripts/wp.js
   - /assets/javascripts/slideshow.js
+  - /assets/javascripts/nav.js

@@ -282,12 +282,7 @@ jQuery(document).foundation();
       });
     }
 
-    $('#menu-toggler').click(function() {
-      $('.top-bar-section').toggle();
-      return false;
-      // $('.top-bar-section').slideToggle('slow');
-      // $('.top-bar-section').toggle('slide');
-    });
+    // Mobile nav toggle handled in nav.js (class-based, not Foundation button stack)
 
     $('.scroll-down').click(function() {
       // $.fn.fullpage.moveSectionDown();

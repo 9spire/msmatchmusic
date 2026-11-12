@@ -5,24 +5,23 @@
 {% endif %}
 
 <div class="transparent fullwidth white fixed contain-to-grid {{ classname }}">
-  <nav class="top-bar onepage" data-options="" data-topbar="" aria-label="Primary">
-    <ul class="title-area">
-      <li class="name">
-        <h1>
-          <a href="{{ 'index.html' | relative_url }}">
-            <img style="max-width: 50px;" alt="Ms Match" src="{{ "/assets/images/InitialLogo-Yellow64.png" | relative_url }}" />
-          </a>
-        </h1>
-      </li>
-    </ul>
-    <div id="menu-toggler" class="right">
-      <a href="#" aria-expanded="false" aria-controls="primary-nav">
+  <nav class="top-bar onepage site-nav" data-options="" data-topbar="" aria-label="Primary">
+    <div class="site-nav__bar">
+      <ul class="title-area">
+        <li class="name">
+          <h1>
+            <a href="{{ 'index.html' | relative_url }}">
+              <img class="site-nav__logo" alt="Ms Match" src="{{ "/assets/images/InitialLogo-Yellow64.png" | relative_url }}" />
+            </a>
+          </h1>
+        </li>
+      </ul>
+      <button type="button" id="menu-toggler" class="site-nav__toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
         <i class="fa fa-bars" aria-hidden="true"></i>
-        Menu
-      </a>
+      </button>
     </div>
-    <section id="primary-nav" class="top-bar-section closed">
-      <ul class="right">
+    <section id="primary-nav" class="top-bar-section site-nav__panel closed">
+      <ul class="right site-nav__links">
         <li><a href="#top">Top</a></li>
         {% for item in site.data.nav %}
           <li>
