@@ -90,8 +90,9 @@ opens:
     <p class="hero-slideshow__tagline">DJ &amp; producer moving bodies and minds on the dance floor.</p>
     <div class="hero-slideshow__ctas">
       <a class="button boxed" href="#releases">Listen</a>
-      <a class="button boxed" href="#contact">Book</a>
+      <a class="button boxed" href="#book">Book</a>
     </div>
+    {% include social-icons.html align="left" %}
   </div>
   <div class="hero-slideshow__controls">
     <button type="button" class="hero-slideshow__pause" data-hero-pause aria-pressed="false" aria-label="Pause slideshow">Pause</button>
@@ -211,6 +212,7 @@ opens:
   </div>
 </div>
 
+<a id="book"></a>
 <section class="book-video" aria-label="Book Ms Match">
   <div class="book-video__media" aria-hidden="true">
     <video autoplay muted loop playsinline poster="{{ "/assets/images/AnimatedGifPoster-Optimized.gif" | relative_url }}">
@@ -279,5 +281,3 @@ opens:
 
 <a id="contact"></a>
 {% include contact-form.html %}
-
-{% include social-networks.html %}

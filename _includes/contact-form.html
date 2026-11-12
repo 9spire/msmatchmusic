@@ -1,14 +1,15 @@
-<div class="full dark">
+<div class="full dark contact-section">
   <div class="row">
     <div class="large-8 columns large-centered end">
-      {% include section-title.html small_title="contact" title="Book Ms Match" %}
+      {% include section-title.html small_title="contact" title="Contact" %}
       <p class="centered-text contact-lead">
         Bookings and inquiries welcome. Reach out by email — I’d love to hear about your event.
       </p>
       <p class="centered-text">
         <a class="button boxed contact-email-btn" href="mailto:djmsmatch@gmail.com">djmsmatch@gmail.com</a>
       </p>
-      <div class="two spacing"></div>
+      {% include social-icons.html %}
+      <p class="centered-text contact-copy">©{{ site.time | date: "%Y" }} All rights reserved.</p>
     </div>
   </div>
 </div>

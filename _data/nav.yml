@@ -7,6 +7,9 @@
 - name: Mixes
   path: "#mixes"
   section_id: mixes
+- name: Book
+  path: "#book"
+  section_id: book
 - name: Shows
   path: "#shows"
   section_id: shows
