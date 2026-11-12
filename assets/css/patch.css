@@ -362,8 +362,8 @@ body.posts .modBlogPost {
 .contain-to-grid.transparent {
   height: auto !important;
   min-height: 0 !important;
-  background: #fff !important;
-  border-bottom: 1px solid #ececec;
+  background: #000 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: none;
   position: fixed !important;
   top: 0 !important;
@@ -428,7 +428,7 @@ body.posts .modBlogPost {
   margin: 0;
   cursor: pointer;
   line-height: 1;
-  color: #222;
+  color: #f0f0f0;
   align-items: center;
   justify-content: center;
   width: 2.25rem;
@@ -441,8 +441,35 @@ body.posts .modBlogPost {
 }
 
 .contain-to-grid.transparent.white.fixed .site-nav__toggle:hover,
-.contain-to-grid.transparent.white.fixed .site-nav__toggle:focus {
+.contain-to-grid.transparent.white.fixed .site-nav__toggle:focus,
+.contain-to-grid .site-nav__toggle:hover,
+.contain-to-grid .site-nav__toggle:focus {
   color: #edb713;
+}
+
+/* Current section — same gold as hover */
+.contain-to-grid .top-bar-section li.is-current:not(.has-form) a:not(.button),
+.contain-to-grid .top-bar-section li.active:not(.has-form) a:not(.button),
+.contain-to-grid .top-bar-section.site-nav__panel li.is-current:not(.has-form) a:not(.button),
+.contain-to-grid .top-bar-section.site-nav__panel li.active:not(.has-form) a:not(.button),
+.contain-to-grid.transparent.white.fixed
+  .top-bar-section
+  li.is-current:not(.has-form)
+  a:not(.button),
+.contain-to-grid.transparent.white.fixed
+  .top-bar-section
+  li.active:not(.has-form)
+  a:not(.button),
+.contain-to-grid.transparent.white.fixed
+  .top-bar-section.site-nav__panel
+  li.is-current:not(.has-form)
+  a:not(.button),
+.contain-to-grid.transparent.white.fixed
+  .top-bar-section.site-nav__panel
+  li.active:not(.has-form)
+  a:not(.button) {
+  color: #edb713 !important;
+  background: transparent !important;
 }
 
 /* Large: full-width row, logo left, links right */
@@ -526,11 +553,15 @@ body.posts .modBlogPost {
     line-height: 1.2 !important;
     padding: 0.55rem 0.7rem !important;
     background: transparent !important;
-    color: #222 !important;
+    color: #f0f0f0 !important;
     white-space: nowrap;
   }
 
   .contain-to-grid.transparent.white.fixed
+    .top-bar-section
+    li:not(.has-form)
+    a:not(.button):hover,
+  .contain-to-grid
     .top-bar-section
     li:not(.has-form)
     a:not(.button):hover {
@@ -577,7 +608,7 @@ body.posts .modBlogPost {
     width: 100% !important;
     left: 0 !important;
     position: static !important;
-    background: #fff !important;
+    background: #000 !important;
     border-top: 0 !important;
     margin: 0 !important;
     padding: 0 0 0.25rem;
@@ -626,8 +657,8 @@ body.posts .modBlogPost {
     margin: 0 !important;
     background: transparent !important;
     border: 0 !important;
-    border-bottom: 1px solid #ececec !important;
-    color: #222 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #f0f0f0 !important;
     font-size: 0.92rem !important;
     font-weight: 500 !important;
     letter-spacing: 0.03em !important;
@@ -650,6 +681,26 @@ body.posts .modBlogPost {
     .top-bar-section.site-nav__panel
     li:not(.has-form)
     a:not(.button):hover {
+    color: #edb713 !important;
+    background: transparent !important;
+  }
+
+  .contain-to-grid
+    .top-bar-section.site-nav__panel
+    li.is-current:not(.has-form)
+    a:not(.button),
+  .contain-to-grid
+    .top-bar-section.site-nav__panel
+    li.active:not(.has-form)
+    a:not(.button),
+  .contain-to-grid.transparent.white.fixed
+    .top-bar-section.site-nav__panel
+    li.is-current:not(.has-form)
+    a:not(.button),
+  .contain-to-grid.transparent.white.fixed
+    .top-bar-section.site-nav__panel
+    li.active:not(.has-form)
+    a:not(.button) {
     color: #edb713 !important;
     background: transparent !important;
   }

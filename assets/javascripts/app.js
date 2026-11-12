@@ -210,75 +210,22 @@ jQuery(document).foundation();
     }
 
 
-    // onepage nav scroll
+    // onepage smooth scroll — section highlight lives in nav.js
     if ( $("nav.top-bar.onepage").length > 0 ) {
-      $('.top-bar-section a[href=#top]').closest('li').addClass('active');
-
       var ctx = $("nav.top-bar.onepage");
+      var headerHeight = function () {
+        return $(".contain-to-grid").outerHeight() || 56;
+      };
 
-      // var headerHeight = ctx.height();
-      // $(window).scroll(function() {
-      //   headerHeight = ctx.height();
-      //   console.log(headerHeight);
-      // });
-      var headerHeight = 59;
-
-      // use to mark whether the scrolling is caused by clicking
-      var clickScrolling = false;
-      // cache for current anchor id
-      var currentAnchorId;
-
-      $('.top-bar-section a', ctx).click(function(event) {
-        $('.top-bar-section a', ctx).closest('li').removeClass('active');
-        $(this).closest('li').addClass('active');
-        clickScrolling = true;
-
-        // console.log($(this).attr('href').offset());
+      $('.top-bar-section a[href^="#"]', ctx).click(function(event) {
+        var href = $(this).attr('href');
         try {
-          if ( $(this).attr('href') == '#top' ) {
-            var distance = 0;
-          } else {
-            var distance = $($(this).attr('href')).offset().top - headerHeight + 'px';
-          }
-
-          // console.log(distance);
-
+          var distance = href === '#top' ? 0 : $(href).offset().top - headerHeight();
           $('html, body').stop().animate({
             scrollTop: distance
-          }, { duration: 1200, easing: "easeInOutExpo", complete: function() { clickScrolling = false; } });
+          }, { duration: 900, easing: "easeInOutExpo" });
           event.preventDefault();
         } catch(e) {}
-      });
-
-
-      // hightlight nav when scrolling
-      var anchors = $('.top-bar-section a[href^="#"]', ctx).map(function() {
-        // console.log(this);
-        var anchor = $($(this).attr('href'));
-        if(anchor.length) { return anchor; }
-      });
-
-      var anchors = [];
-
-      $(window).scroll(function() {
-        if(clickScrolling) return false;
-
-        var fromTop = $(this).scrollTop();
-        var passedAnchors = anchors.map(function() {
-          // add 1 to make the current nav change 1px before it should when scrolling top to bottom
-          if(fromTop + headerHeight + 1 >= $(this).offset().top)
-            return this;
-        });
-        // get the last anchor in the passedAnchors as the current one
-        var currentAnchor = passedAnchors[passedAnchors.length - 1];
-        if(currentAnchor) {
-          if(currentAnchorId !== currentAnchor.attr('id')) {
-            currentAnchorId = currentAnchor.attr('id');
-            $('.top-bar-section a', ctx).closest('li').removeClass('active');
-            $('.top-bar-section a[href=#'+currentAnchorId+']', ctx).closest('li').addClass('active');
-          }
-        }
-
       });
     }
 
