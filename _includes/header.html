@@ -4,38 +4,38 @@
   {% assign classname='bg-black' %}
 {% endif %}
 
-<div class='transparent fullwidth white fixed contain-to-grid {{ classname }}'>
-  <nav class='top-bar onepage' data-options='' data-topbar=''>
-    <ul class='title-area'>
-      <li class='name'>
+<div class="transparent fullwidth white fixed contain-to-grid {{ classname }}">
+  <nav class="top-bar onepage" data-options="" data-topbar="" aria-label="Primary">
+    <ul class="title-area">
+      <li class="name">
         <h1>
-          <a href='{{ 'index.html' | relative_url }}'>
-            <img  style="max-width: 50px;" alt="" src="{{ "/assets/images/InitialLogo-Yellow64.png" | relative_url }}" />
+          <a href="{{ 'index.html' | relative_url }}">
+            <img style="max-width: 50px;" alt="Ms Match" src="{{ "/assets/images/InitialLogo-Yellow64.png" | relative_url }}" />
           </a>
         </h1>
       </li>
     </ul>
     <div id="menu-toggler" class="right">
-      <a href='#'>
-        <i class="fa fa-bars"></i>
+      <a href="#" aria-expanded="false" aria-controls="primary-nav">
+        <i class="fa fa-bars" aria-hidden="true"></i>
         Menu
       </a>
     </div>
-    <section class='top-bar-section closed'>
-      <ul class='right'>
-
+    <section id="primary-nav" class="top-bar-section closed">
+      <ul class="right">
+        <li><a href="#top">Top</a></li>
         {% for item in site.data.nav %}
           <li>
             {% assign first = item.path | truncate:1,'' %}
 
             {% if first != '#' %}
               {% assign href = item.path | relative_url %}
-            {% elsif page.onepage %}          
+            {% elsif page.onepage %}
               {% assign href = item.path %}
-            {% else %}              
-              {% assign href = 'index.html' | append:item.path | relative_url %}              
+            {% else %}
+              {% assign href = 'index.html' | append:item.path | relative_url %}
             {% endif %}
-            
+
             <a href="{{ href }}">{{ item.name }}</a>
           </li>
         {% endfor %}

@@ -1,41 +1,29 @@
 ---
 layout: default
 onepage: true
-works:
-  - path: _works/diff-foods.md
-  - path: _works/sketch-book.md 
-  - path: _works/tv-video.md
-    style: wide
-  - path: _works/umbrella-beauty.md
-  - path: _works/amber.md
-  - path: _works/explore.md  
-  - path: _works/uro-mag.md 
-    style: wide
-  - path: _works/flowers.md
-team_slides:
-  - /assets/images/@stock/slide-full-1.jpg
-  - /assets/images/@stock/slide-full-8.jpg
-  - /assets/images/@stock/slide-full-11.jpg
-  - /assets/images/@stock/slide-full-10.jpg
+title: Ms Match Music — DJ & Producer
+description: Portland DJ and producer Ms Match. Breakbeat, tech house, and bass house. Stream Drop It and 22 45, hear mixes, and book Ms Match.
 
-testimonials:
-  - quote: "NYE 2024"
-    link: "https://www.facebook.com/share/17QDXZKWFG/"
-    author: 
-      name: "Reflections"
-      position: 'December 31st, 2024'
-  - quote: "Meadow"
-    link: ""
-    author: 
-      name: "An Intimate Festival"
-      position: 'June 2024'
-  - quote: "Shift Festival 2024"
-    link: "https://www.facebook.com/events/1651292158736858"
-    author: 
-      name: "Flowing Chaos"
-      position: 'July 25-29, 2024'
+mixes:
+  - id: "2123621421"
+    title: Meadow2025-SaturdayNite
+  - id: "1998394991"
+    title: NYE2024-Reflections
+  - id: "1910478692"
+    title: August2024
+  - id: "1910479739"
+    title: August2024-DrumAndBassss
+  - id: "1479232612"
+    title: Winter Light Festival 2023 Silent Disco
+  - id: "797081728"
+    title: Love in the Time of Pandemic
+  - id: "641174553"
+    title: Oode 2019
+  - id: "553855593"
+    title: Sweater Party 2018
 
 festivals:
+  - Meadow 2025
   - Shift 2024
   - Meadow 2024
   - Shift Theme Camp 2023
@@ -52,75 +40,77 @@ festivals:
   - Cocoon 2017
 
 events:
-  - Turn Up the Color - 2024
-  - Too Much House - 2023
-  - BassCamp - 2020, 2021, 2022, 2023, 2024
-  - Patio - 2017, 2018, 2019, 2022, 2023, 2024
-  - Broad Beats - 2022
-  - Nike WHQ - 2022
-  - Fun Luv'n Silent Disco - 2020, 2021, 2022, 2023, 2024, 2025
-  - Winter Light Festival - 2019, 2021, 2022, 2023, 2024, 2025
-  - Howl - 2018, 2019, 2021, 2022, 2023
-  - Roaring Twenties NYE - 2020 (Murderboat)
-  - Mothership - 2018
-  - Sweater Party 2018, 2019, 2023
-  - White Out - 2019, 2024
-  - Believe - 2019
-  - Uplift - 2018
-  - Frakured - 2019
-  - Delta V - 2020
-  - Flight - 2018
-  - FMPDX - 2018
-  - Deep House Wednesdays - 2019
-  - Celebrate Life NYE 2018
+  - Fun Luv'n Silent Disco — 2020–2026
+  - Winter Light Festival — 2019, 2021–2026
+  - Tabor Dance — 2025, 2026
+  - Nike WHQ — 2022, 2025, 2026
+  - Turn Up the Color — 2024
+  - Patio — 2017–2019, 2022–2024
+  - BassCamp — 2020–2024
+  - White Out — 2019, 2024
+  - Too Much House — 2023
+  - Howl — 2018–2019, 2021–2023
+  - Sweater Party — 2018, 2019, 2023
+  - Broad Beats — 2022
+  - Roaring Twenties NYE — 2020
+  - Delta V — 2020
+  - Believe — 2019
+  - Frakured — 2019
+  - Deep House Wednesdays — 2019
+  - Uplift — 2018
+  - Mothership — 2018
 
 opens:
   - Bijou
   - VNSSA
   - Lux Groove
   - LA Riots
-     
 ---
 
-<div class='full no-padding parallax home-video-wrapper'>
-  <div class='fullscreen'>
-    <video autoplay='autoplay' id='fullscreen-video' loop='loop' muted='true' poster='{{ "/assets/images/AnimatedGifPoster-Optimized.gif" | relative_url }}'>
-      <source src='{{ "/assets/images/MsMatchVideoReel2.mp4" | relative_url }}' type='video/mp4'>
-    </video>
-    <div class='overlay'></div>
-    <div class='layer'>
-      <p class="small-title">Moving the dance floor </p>
-      <h1 class='thin' id="to-be-update">
-         <span class="fir">Bass Breaks Tech</span><br/>
-         <span class="sec">House Music</span><br/>
-         <span class="thir">Ms Match Music</span>
-      </h1>
-      <h2 class='thin'>
-       Mixes, media, and originals 
-       {% assign nav_obj = site.data.nav | where:'section_id','works' | first %}
-       <a href='{{ "index.html" | append:nav_obj.path | relative_url }}'>below</a>
-      </h2>
+<section class="hero-slideshow" aria-roledescription="carousel" aria-label="Ms Match live DJ photos">
+  <div class="hero-slideshow__slides" data-hero-slides>
+    {% for slide in site.data.slides %}
+      <div class="hero-slideshow__slide{% if forloop.first %} is-active{% endif %}" {% unless forloop.first %}aria-hidden="true"{% endunless %}>
+        <picture>
+          <source srcset="{{ slide.src | append: '.webp' | relative_url }}" type="image/webp">
+          <img
+            src="{{ slide.src | append: '.jpg' | relative_url }}"
+            alt="{{ slide.alt | escape }}"
+            {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
+            decoding="async"
+          >
+        </picture>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="hero-slideshow__overlay"></div>
+  <div class="hero-slideshow__content">
+    <p class="small-title">Portland · Breaks · Tech House · Bass</p>
+    <h1>Ms Match</h1>
+    <p class="hero-slideshow__tagline">DJ &amp; producer moving bodies and minds on the dance floor.</p>
+    <div class="hero-slideshow__ctas">
+      <a class="button boxed" href="#releases">Listen</a>
+      <a class="button boxed" href="#contact">Book</a>
     </div>
   </div>
-</div>
+  <div class="hero-slideshow__controls">
+    <button type="button" class="hero-slideshow__pause" data-hero-pause aria-pressed="false" aria-label="Pause slideshow">Pause</button>
+    <div class="hero-slideshow__dots" data-hero-dots role="tablist" aria-label="Slideshow slides"></div>
+  </div>
+</section>
 
-
-<a id='about'></a>
-<div class='full'>
-  <div class='row'>
-    <div class='large-8 columns large-centered'>
+<a id="about"></a>
+<div class="full">
+  <div class="row">
+    <div class="large-8 columns large-centered">
       <div class="section-title">
         <p class="small-title">Biography</p>
-        <h2>
-          Moving bodies & minds is what she does best.
-        </h2>
-        <p class="big-size">Ms Match brings an obsession-level focus to selecting, combining, and creating the music that keeps her and the crowd moving. Behind the decks, Ms Match channels the universal joy of losing oneself on the dance floor, in that place beyond conscious thought.
-        </p>
-        <div class="four spacing"></div>
-        <img style="max-width: 70px;" src="{{ "/assets/images/InitialLogo-Yellow64.png" | relative_url }}" alt="">
+        <h2>Moving bodies &amp; minds is what she does best.</h2>
+        <p class="big-size">Ms Match brings an obsession-level focus to selecting, combining, and creating the music that keeps her and the crowd moving. Behind the decks, she channels the universal joy of losing oneself on the dance floor.</p>
+        <div class="two spacing"></div>
+        <img style="max-width: 70px;" src="{{ "/assets/images/InitialLogo-Yellow64.png" | relative_url }}" alt="Ms Match logo">
       </div>
     </div>
-    <div class="four spacing"></div>
   </div>
 </div>
 
@@ -130,220 +120,164 @@ opens:
     <div class="section-header alt white">
       <h2>Background</h2>
     </div>
-    <p class="light">Based in Portland, Oregon, Ms Match has played her signature style of vocal-driven, hip-hop influenced breakbeat, tech house, and bass house at most electronic festivals and venues in the area. 
-    </p>
-    <p class="light">Expanding on skills and taking her unique brand of musical experience to new audiences and locations are her primary goals as a DJ. Ms Match is also applying the same passion and discipline to producing, with an EP in sight for 2022.</p>
+    <p class="light">Based in Portland, Oregon, Ms Match has played her signature style of vocal-driven, hip-hop influenced breakbeat, tech house, and bass house at festivals and venues across the region.</p>
+    <p class="light">She produces as <strong>Luv Freq</strong>, with original releases on Spotify — including the album <em>22 45</em> and the <em>Drop It</em> EP featuring a Marcus Funkhouser remix.</p>
     <div class="three spacing"></div>
   </div>
 </div>
 
-<a id='works'></a>
-<div class='full'>
-  <div class='row'>
-    <div class='large-8 columns large-centered'>
-      {% include section-title.html small_title="mixes & video" title="Latest Music" %}
+<a id="releases"></a>
+<div class="full">
+  <div class="row">
+    <div class="large-8 columns large-centered">
+      {% include section-title.html small_title="on spotify" title="Releases" %}
+      <p class="centered-text releases-intro">Original music as Ms Match and Luv Freq.</p>
+    </div>
+  </div>
+  <div class="row releases-grid">
+    <div class="large-6 columns">
+      <div class="release-card">
+        <h3>Drop It <span class="release-meta">EP · 2026</span></h3>
+        <p>Ms Match / Luv Freq — includes Marcus Funkhouser remix</p>
+        <iframe
+          style="border-radius:12px"
+          src="https://open.spotify.com/embed/album/1mffFncCZZRv8QWMWnnfQN?utm_source=generator&theme=0"
+          width="100%"
+          height="352"
+          frameBorder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          title="Drop It EP on Spotify"></iframe>
+        <p class="release-link">
+          <a href="https://open.spotify.com/album/1mffFncCZZRv8QWMWnnfQN" target="_blank" rel="noopener noreferrer">Open on Spotify</a>
+        </p>
+      </div>
+    </div>
+    <div class="large-6 columns">
+      <div class="release-card">
+        <h3>22 45 <span class="release-meta">Album · 2022</span></h3>
+        <p>Luv Freq</p>
+        <iframe
+          style="border-radius:12px"
+          src="https://open.spotify.com/embed/album/5nzay0x4g98vizTfHRdqn9?utm_source=generator&theme=0"
+          width="100%"
+          height="352"
+          frameBorder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          title="22 45 album on Spotify"></iframe>
+        <p class="release-link">
+          <a href="https://open.spotify.com/album/5nzay0x4g98vizTfHRdqn9" target="_blank" rel="noopener noreferrer">Open on Spotify</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="four spacing"></div>
+</div>
+
+<a id="mixes"></a>
+<div class="full dark">
+  <div class="row">
+    <div class="large-8 columns large-centered">
+      {% include section-title.html small_title="soundcloud" title="Mixes" %}
     </div>
   </div>
 </div>
-
-<div class='full no-padding' id="demo-1-works">
-  <div class='mod modMasonryGallery' style="padding: 0 3%">
-    <ul class='gallery'>
-      <li>
-        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1910478692&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-      </li>
-      <li>
-        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1910479739&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-      </li>
-      <li>
-        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1718418303&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-      </li>
-      <li>
-        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1718418084&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-      </li>
-      <li>
-        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1479231289&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-      </li>
-      <li>
-        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1479232612&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-      </li>
-      <li>
-        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1310228638&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-      </li>
-      <li>
-        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1214423326&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-      </li>
-      <li>
-        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1173570973&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-      </li>
-      <li>
-        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/866877049&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-      </li>
-      <li>
-        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/797081728&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-      </li>
-      <li>
-        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/737940955&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-      </li>
-      <li>
-        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/641174553&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-      </li>
-      <li>
-        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/509792679&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-      </li>
-      <!--
-        for later....
-        Dark 30
+<div class="full dark no-padding mixes-section">
+  <div class="row">
+    <div class="large-10 large-centered columns">
+      <ul class="mixes-list">
+        {% for mix in page.mixes %}
         <li>
-        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1173584452&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-      </li>
-      -->
-      <!--
-      {% for item in page.works %}
-
-        {% assign work = site.works | where:"path",item.path | first %}
-
-        {% if item.style == 'wide' %}
-          {% assign class = 'wide' %}
-          {% assign width = 1000 %}
-          {% assign height = 350 %}
-        {% else %}
-          {% assign class = '' %}
-          {% assign width = 500 %}
-          {% assign height = 350 %}
-        {% endif %}
-
-        <li class="{{class}}">
-          <a href='{{ work.url | relative_url }}'>
-            <img width="{{width}}" height="{{height}}" alt="" src="{{ work.thumbnail | relative_url }}" />
-            <div class='overlay'>
-              <div class='thumb-info'>
-                <h3>{{ work.title | downcase | capitalize }}</h3>
-                <p>{{ work.categories | join:" & " | escape }}</p>
-              </div>
-            </div>
-          </a>
+          <iframe
+            width="100%"
+            height="166"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            loading="lazy"
+            title="{{ mix.title | escape }}"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ mix.id }}&color=%23edb713&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
         </li>
+        {% endfor %}
+      </ul>
+      <p class="centered-text mixes-more">
+        <a class="button boxed" href="https://soundcloud.com/djmsmatch/tracks" target="_blank" rel="noopener noreferrer">More on SoundCloud</a>
+      </p>
+      <div class="four spacing"></div>
+    </div>
+  </div>
+</div>
 
-      {% endfor %}
-      -->
-
+<section class="book-video" aria-label="Book Ms Match">
+  <div class="book-video__media" aria-hidden="true">
+    <video autoplay muted loop playsinline poster="{{ "/assets/images/AnimatedGifPoster-Optimized.gif" | relative_url }}">
+      <source src="{{ "/assets/images/MsMatchVideoReel2.mp4" | relative_url }}" type="video/mp4">
+    </video>
+  </div>
+  <div class="book-video__overlay"></div>
+  <div class="book-video__content">
+    <div class="section-header alt white">
+      <h2>Book Ms Match</h2>
+    </div>
+    <ul class="book-offerings">
+      <li>Breakbeats · Drum &amp; Bass · House · Tech House · Disco House</li>
+      <li>Brings gear, or plays on standard house systems</li>
+      <li>Private parties · Festivals · Clubs · Bars</li>
     </ul>
-    <div class="four spacing"></div>
+    <p class="book-inline">
+      <a class="button boxed" href="mailto:djmsmatch@gmail.com">djmsmatch@gmail.com</a>
+    </p>
   </div>
-</div>
+</section>
 
-
-<a id='blog'></a>
-<div class='full dark'>
-  <div class='row'>
-    <div class='large-8 columns large-centered'>
-      {% include section-title.html small_title="watch" title="Videos" %}
-    </div>
-  </div>
-</div>
-<div class="full dark no-padding no-overflow padding-bottom">
-  <div class='large-3 columns'>
-    <div class='youtube'>
-      <iframe class="youtube-iframe" src="https://www.youtube.com/embed/lf0_vkPuWRY?si=Sd38XrNVx_44SO6j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
-  </div>
-    <div class='large-3 columns'>
-      <div class='youtube'>
-        <iframe class="youtube-iframe" src="https://www.youtube.com/embed/PMtmbWYkwY8?si=9jA8eP1vhngu0R7T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-    </div>
-    <div class='large-3 columns'>
-      <div class='youtube'>
-        <iframe class="youtube-iframe" src="https://www.youtube.com/embed/LXeEssCTDYY?si=O20GxQ7vS8DU8AUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-    </div>
-    <div class='large-3 columns'>
-      <div class='youtube'>
-        <iframe class="youtube-iframe" src="https://www.youtube.com/embed/pC--EKh1SW8?si=oY_84rSGWtwN4or1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-    </div>
-    <div class="four spacing"></div>
-</div>
-
-<a id='shows'></a>
-<div class='full no-overflow no-padding parallax' style="background-image: url({{ "/assets/images/@stock/MsMatch-ReSet2021-7.jpg" | relative_url }})">
-  <div class="left-half">
-    <div class="two spacing"></div>
-    <div class="row">
-      <div class="section-header alt white">
-        <h2>Upcoming Shows</h2>
-      </div>
-      <div class='mod modTestimonials simple'>
-        <div class='row'>
-          <div class='small-12 columns'>
-            <div class='items'>
-              {% for t in page.testimonials %}
-                <div class='item'>
-                  <p class='quote'><a href='{{ t.link }}' target="_blank">{{ t.quote }}</a></p>
-                 
-                  <div class='author'>
-                    <p class='author-name'>
-                      -
-                      <strong>{{ t.author.name }}</strong>
-                      {%- if t.author.position %}, {{ t.author.position }}{% endif %}
-                    </p>
-                  </div>
-                </div>
-              {% endfor %}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class='full'>
-  <div class='row'>
-    <div class='large-8 columns large-centered'>
+<a id="shows"></a>
+<div class="full">
+  <div class="row">
+    <div class="large-8 columns large-centered">
       {% include section-title.html small_title="Where Ms Match Plays" title="Festivals & Shows" %}
     </div>
   </div>
 </div>
 <div class="full no-padding">
   <div class="clients">
-    <div class='row'>
-        <div class='large-4 large-offset-2 small-5 small-offset-1 columns'>
-          <h3>Festivals</h3>
-          <div class="shows">
-            <ul>
-              {% for festival in page.festivals %}
-              <li>{{ festival }}</li>
-              {% endfor %}
-            </ul>
-          </div>
-          <h3>Opened for</h3>
-          <div class="shows">
-            <ul>
-              {% for open in page.opens %}
-              <li>{{ open }}</li>
-              {% endfor %}
-            </ul>
-          </div>
+    <div class="row">
+      <div class="large-4 large-offset-2 small-5 small-offset-1 columns">
+        <h3>Festivals</h3>
+        <div class="shows">
+          <ul>
+            {% for festival in page.festivals %}
+            <li>{{ festival }}</li>
+            {% endfor %}
+          </ul>
         </div>
-        <div class='large-4 small-5 columns end'>
-          <h3>Events</h3>
-          <div class="shows">
-            <ul>
-              {% for event in page.events %}
-              <li>{{ event }}</li>
-              {% endfor %}
-            </ul>
-          </div>
+        <h3>Opened for</h3>
+        <div class="shows">
+          <ul>
+            {% for open in page.opens %}
+            <li>{{ open }}</li>
+            {% endfor %}
+          </ul>
         </div>
+      </div>
+      <div class="large-4 small-5 columns end">
+        <h3>Events</h3>
+        <div class="shows">
+          <ul>
+            {% for event in page.events %}
+            <li>{{ event }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
   <div class="four spacing"></div>
 </div>
 
-<div class="four spacing"></div>
-<a id='contact'></a>
+<a id="contact"></a>
 {% include contact-form.html %}
 
 {% include social-networks.html %}

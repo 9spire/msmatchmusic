@@ -1,0 +1,21 @@
+title: Ms Match Music
+email: djmsmatch@gmail.com
+description: >-
+  Portland DJ and producer Ms Match — breakbeat, tech house, and bass house.
+  Listen to releases and mixes, and inquire about bookings.
+baseurl: ""
+url: "https://www.msmatchmusic.com"
+lang: en
+
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - bower_components/modernizr
+  - README.md
+  - LICENSE
